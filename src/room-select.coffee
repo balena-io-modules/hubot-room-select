@@ -20,7 +20,7 @@ module.exports = (robot) ->
 	robot.receiveMiddleware (context, next, done) ->
 		roomSet = (text, room) ->
 			# The monitor may be set to follow just the bot-wrangler
-			if text.match /\b(me)\b/
+			if text.match /\b(me|on)\b/
 				rooms[room] = 'me'
 			# The monitor may be set to follow everyone
 			else if text.match /\b(all)\b/
